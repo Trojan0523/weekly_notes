@@ -10,7 +10,7 @@
 
 其他的页面，特别是那些为全面屏贴切导航栏设计的页面，像下面图所示，可以选择性进一步使用更全面新展示的特性。 [IPhone X 人机交互指南](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/adaptivity-and-layout/) 详细介绍了一些应该记住的常规设计准则， 同时也讨论了拥有特殊机制的原生应用可以采纳[UIKit 文档](https://developer.apple.com/documentation/uikit/uiview/positioning_content_relative_to_the_safe_area) 让应用界面变得更加好看，我们的网站也可以使用一些新的IOS 11 WebKit Api 以获得无缝边缘最佳的展示体验。
 
-![viewport-fit="cover"](/Users/buxiongyu/Desktop/私人文件/weekly_notes/image/viewport-fit-cover.png)
+![viewport-fit="cover"](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/viewport-fit-cover-the-navbar.png)
 
 ## 使用全面屏
 
@@ -22,7 +22,7 @@
 <meta name='viewport' content='initial-scale=1, viewport-fit=cover' >
 ```
 
-![viewport-fit=cover 填充完整整个视窗](/Users/buxiongyu/Desktop/私人文件/weekly_notes/image/viewport-fit-cover-the-navbar.png)
+![viewport-fit=cover 填充完整整个视窗](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/viewport-fit-cover-the-navbar.png)
 
 重新加载后，导航栏就会往外贴切了不少，看起来是一个贴边的样子而不是空出来一小部分，不过，我们需要弄清楚为什么遵从系统的安全区域插图十分重要：一些页面内容被设备的传感器外壳遮住了(手机上面会有一些传感器，屏幕一部分的视窗是无法被触摸使用的)，而且底部导航栏难以利用.
 
@@ -32,7 +32,7 @@
 
 采用`viewport-fit=cover` 选择性将一些包含重要内容填充到节点时，需要进一步的操作让我们的页面保持可用，同时确保他们不会在屏幕边缘变得模糊(obscured)。为了能更充分利用页面上Iphone X以上机型增加出来的屏幕高度，使用过程中能动态调整避免误触边缘角落，传感器外壳或者主屏幕的返回Home键。
 
-![safe-area](/Users/buxiongyu/Desktop/私人文件/weekly_notes/image/safe-areas-1.png)
+![safe-area](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/safe-areas-1.png)
 
 为了达到以上图片的效果，webKit为IOS 11 提供了新式CSS函数 ： env() ，此函数同时拥有 [四个单独环境变量定义](https://github.com/w3c/csswg-drafts/pull/1819) ，有兴趣的同学可以去看看上面链接w3c上面的css草案提议。四个变量分别是： `safe-area-inset-left` `safe-area-inset-right` `safe-area-inset-bottom` `safe-area-inset-top`  ，分别代表左右下上不同方向的安全区域插图属性，当混合样式的时候，这些属性允许样式声明引用于每个方向当前安全区域的尺寸。
 
@@ -58,7 +58,7 @@ env() 适用于任何地方的 var() 常量， 例如 在`padding`属性内部:
 
 对于不支持env() 的浏览器，这条样式规则会被忽略掉，所以分别使用特殊的指定向下兼容的规则很重要，还是需要尊重安全区域内容插图，以便重要内容可见不会被覆盖，同时安全区域不放置任何文字类或点击内容。
 
-![respect safe area](/Users/buxiongyu/Desktop/私人文件/weekly_notes/image/safe-area-constants.png)
+![respect safe area](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/safe-area-constants.png)
 
 
 
@@ -68,7 +68,7 @@ env() 适用于任何地方的 var() 常量， 例如 在`padding`属性内部:
 
 如果您还是想开发时在安全区插入内容，可能会注意到 指定一个最小的填充padding作为安全区域插图比较困难，以上页面我们是使用了12px 左侧padding替换掉 `env(safe-area-inset-left)` 当手机旋转回纵向的时候，左侧安全区域插入会变为0px, 文本紧贴屏幕边缘。
 
-![屏幕旋转回来后没有替换的margin](/Users/buxiongyu/Desktop/私人文件/weekly_notes/image/no-margins.png)
+![屏幕旋转回来后没有替换的margin](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/no-margins.png)
 
 
 
@@ -96,7 +96,7 @@ env() 适用于任何地方的 var() 常量， 例如 在`padding`属性内部:
 
 在实例页面中，纵向`env(safe-area-inset-left)` 解析为0px，因此，max() 函数解析为 `0 + 12px = 12px` ， 横向`env(safe-area-inset-left)`由于传感器外壳变大，该max() 功能会改为解析env() 函数的尺寸并使用此尺寸作为填充，保证重要内容永远都是可见的。
 
-![max() 函数解析外边距填充](/Users/buxiongyu/Desktop/私人文件/weekly_notes/image/max() 函数解析填充.png)
+![max() 函数解析外边距填充](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/max()%20%E5%87%BD%E6%95%B0%E8%A7%A3%E6%9E%90%E5%A1%AB%E5%85%85.png)
 
 
 
@@ -108,9 +108,9 @@ env() 适用于任何地方的 var() 常量， 例如 在`padding`属性内部:
 
 M站中同样有存在两处需要吸底触碰IPhone X以上机型 底部安全区域的情景： 一个是add-to-bag加入购物车按钮吸底panel， 一个是优惠券吸底
 
-![有安全区域加车](/Users/buxiongyu/Desktop/私人文件/weekly_notes/image/add-to-bag-safe.png)
+![有安全区域加车](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/add-to-bag-safe.png)
 
-![导航栏加车](/Users/buxiongyu/Desktop/私人文件/weekly_notes/image/add-to-bag-navbar.png)
+![导航栏加车](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/add-to-bag-navbar.png)
 
 这里的加车是使用了一个白色的背景区吸底加高了底部的padding边距，加高了一个底部镂空区域，与前文的尊重安全区域不做任何有效内容展示相符，具体的css样式如下：
 
@@ -153,9 +153,9 @@ M站中同样有存在两处需要吸底触碰IPhone X以上机型 底部安全�
 
 优惠券吸底情况： 
 
-![有安全区域优惠券](/Users/buxiongyu/Desktop/私人文件/weekly_notes/image/coupon-safe.png)
+![有安全区域优惠券](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/coupon-safe.png)
 
-![有导航栏优惠券](/Users/buxiongyu/Desktop/私人文件/weekly_notes/image/coupon-navbar.png)
+![有导航栏优惠券](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/coupon-navbar.png)
 
 这里的做法有悖于上文尊重安全区域 , 根据需求需要完全吸底，所以没有留出固定高度避免将重要内容展示在安全区域，具体的css样式如下：
 
