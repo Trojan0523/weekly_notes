@@ -1,0 +1,91 @@
+# **Personal.谈谈 script setup 定稿**
+
+> 7月29日，vue3 setup顶层提升已经定稿，RFC处于最后一个升级的阶段。总结出来有以下几个变动，script setup的出现总体来说让我们少写了很多代码，vue 3.2会将这些新特性移除实验性状态
+
+
+
+### 编译器的宏定义不再需要引入
+
+- 以往script setup 需要手动引入编译期的emit和props才能使用，现在默认情况下在`<script setup>` 隐式包含这几个方法的初始化，包括：`defineExpose withDefault defineProps defineEmits`
+
+
+
+##### defineExpose
+
+- 此方法适用于显式定义组件需要保留出去的公共方法，(通过模板引用访问子组件实例时)， 同时也是一个编译宏，编译成等价暴露出去的运行时内容。当需要默认导出子组件和将子组件需要导出的变量导出的时候可以使用.
+
+  ```vue
+  <template setup>
+  	cosnt a = 1
+  defineExpose({a})
+  </template>
+  ```
+
+
+
+##### defineEmit -> defineEmits
+
+- 用法上面没啥变化，同样是直接使用定义emits自定义事件即可
+
+
+
+##### useContext -> useSlots() & useAttrs()
+
+- 没什么好说的，将slot和attrs从context里面解构出来使用，因为使用script setup的时候上下文表示不清晰，所以更多的想显式暴露出`slots` 和`attrs` 这样两个方法在实际运行时也能在组合api函数usexxx()里面能使用到 : (类似setup(props, { slot, attr }) )
+
+
+
+##### inherit-attrs 属性从template移除
+
+- 为了避免给自己挖坑，就不选择将继承的属性暴露出来了，当然有必要的话，可以在分离的script块中自己定义额外的属性
+
+
+
+##### variable -> 指令映射
+
+- 模板指令映射会被回归作为局部变量(带上v前缀) e.g.指令变量 命名为vMyDir需要在模板中作为`v-my-dir`使用
+- 对比组件，全局注册的指令和局部注册的变量有冲突，有issue复现，所以其实相对于偶发性的全局指令来说显得没那么重要
+
+
+
+##### 类型声明改进
+
+- `defineProps` `defineEmit` 现在可以在基础类型声明下分别定义类型和接口字面量了，喜大普奔：）
+
+  ```typescript
+  interface Props {
+    msg?: string
+  }
+  const props = defineProps<Props>()
+  ```
+
+- defineEmits 可以定义向上抛出事件的类型字面量或带有回调签名的接口~~
+
+  ```typescript
+  const emit = defineEmit<{
+    (e: 'change', id: number): void,
+    (e: 'update', value: string): void,
+  }>()
+  ```
+
+- 新的`withDefaults` 编译宏可以给定义的props赋初始值了，不过需要搭配defineProps声明使用
+
+  ```typescript
+  interface Props {
+    msgs?: string
+  }
+  const prop = withDefaults(defineProps<Props(), {
+    msg: 'hello'
+  }>)
+  ```
+
+- 在导入类型独享声明里面，vue团队选择继续保留其能力，虽然技术上是可行的，但是并不像影响到api的设计风格
+
+
+
+##### async/await 自动上下文恢复
+
+- 只要使用了 `script setup` ，其里面所有函数如果识别到await ，该sfc就会顶层注入async，将其作为顶层await使用，返回的也是一个async包裹的异步函数式子。
+
+
+
