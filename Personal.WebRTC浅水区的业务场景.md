@@ -40,7 +40,8 @@
 2. 对于不同浏览器厂商的实现方式，同样要做兼容，这里的话是对几个浏览器内核实现的方式进行兼容：
 
    ```js
-   let getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia)
+   let getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia 
+   || navigator.mozGetUserMedia || navigator.msGetUserMedia)
    ```
 
    ```vue
