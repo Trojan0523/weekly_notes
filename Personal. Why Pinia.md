@@ -202,7 +202,7 @@ export const todos = defineStore('todos', {
 - 个人观点: 以往我们在写Vuex4的时候，总是要写一大堆类型，确实不方便，贴个图出来自行体会以下(狗头.jpg)
 - ![vuex-actions](https://github.com/Trojan0523/weekly_notes/blob/main/image/vuex-actions.png?raw=true)
 
-![vuex-mutations](https://github.com/Trojan0523/weekly_notes/blob/main/image/vuex-mutations.png?raw=true)
+- ![vuex-mutations](https://github.com/Trojan0523/weekly_notes/blob/main/image/vuex-mutations.png?raw=true)
 
 - Vuex也是真够可以的，TS支持度不够，为了类型推断强行提升TS的体操水平,  Pinia对TS的支持比较好，改写的实例往后稍稍，之后会迭代出来，
 
