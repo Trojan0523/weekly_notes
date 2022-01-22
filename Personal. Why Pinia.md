@@ -133,9 +133,9 @@ export default {
 import { defineStore } from 'pinia'
 
 export const todos = defineStore('todos', {
-	state: () => ({
-		/** @type {{ text: string, id: number, isFinished: boolean }[]} */
-		todos: [],
+    state: () => ({
+    /** @type {{ text: string, id: number, isFinished: boolean }[]} */
+    todos: [],
     /** @type {'all' | 'finished' | 'unfinished'} */
     filter: 'all',
     // 类型自动推断成number
