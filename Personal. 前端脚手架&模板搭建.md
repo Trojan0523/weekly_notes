@@ -401,7 +401,7 @@
            1. ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-category.png?raw=true)
            2. ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-template.png?raw=true)
            3. ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-hook.png?raw=true)
-        2. 顶层Script setup 在 Vue 3.2之后也已经从rfc正式释放了，感兴趣的同学可以看看雄宇同学的这篇博客： [谈谈script setup 定稿](https://github.com/Trojan0523/weekly_notes/blob/main/Personal.谈谈 script setup 定稿.md)
+        2. 顶层Script setup 在 Vue 3.2之后也已经从rfc正式释放了，感兴趣的同学可以看看雄宇同学的这篇博客： [谈谈script setup 定稿](https://github.com/Trojan0523/weekly_notes/blob/main/Personal.%E8%B0%88%E8%B0%88%20script%20setup%20%E5%AE%9A%E7%A8%BF.md)
         3. 普通的script setup `<script>setup ()</script>`
 
 
