@@ -402,7 +402,7 @@
   ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-template.png?raw=true)
   ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-hook.png?raw=true)
 
-- 顶层 Script setup 在 Vue 3.2 之后也已经从 rfc 正式释放了，感兴趣的同学可以看看雄宇同学的这篇博客： [谈谈script setup 定稿](https://github.com/Trojan0523/weekly_notes/blob/main/Personal.%E8%B0%88%E8%B0%88%20script%20setup%20%E5%AE%9A%E7%A8%BF.md)
+- 顶层 Script setup 在 Vue 3.2 之后也已经从 rfc 正式释放了，感兴趣的同学可以看看雄宇同学的这篇博客： [谈谈 script setup 定稿](https://github.com/Trojan0523/weekly_notes/blob/main/Personal.%E8%B0%88%E8%B0%88%20script%20setup%20%E5%AE%9A%E7%A8%BF.md)
 
 - 普通的 script setup `<script>setup ()</script>`
 
