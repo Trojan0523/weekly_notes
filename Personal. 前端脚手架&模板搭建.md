@@ -397,13 +397,14 @@
 
 > 抽离出这 tsx 一套范式的原因：hooks 抽离可以达到多端复用的效果，通过只替换 html 结构和样式达到不同端逻辑统一
 
-        1. 体验 tsx 在 vue 中的开发可以按照项目中 views/template 的格式进行开发，目录如下: (Temp)
-        
-           1. ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-category.png?raw=true)
-           2. ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-template.png?raw=true)
-           3. ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-hook.png?raw=true)
-        2. 顶层 Script setup 在 Vue 3.2 之后也已经从 rfc 正式释放了，感兴趣的同学可以看看雄宇同学的这篇博客： [谈谈script setup 定稿](https://github.com/Trojan0523/weekly_notes/blob/main/Personal.%E8%B0%88%E8%B0%88%20script%20setup%20%E5%AE%9A%E7%A8%BF.md)
-        3. 普通的 script setup `<script>setup ()</script>`
+- 体验 tsx 在 vue 中的开发可以按照项目中 views/template 的格式进行开发，目录如下:
+  ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-category.png?raw=true)
+  ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-template.png?raw=true)
+  ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-hook.png?raw=true)
+
+- 顶层 Script setup 在 Vue 3.2 之后也已经从 rfc 正式释放了，感兴趣的同学可以看看雄宇同学的这篇博客： [谈谈script setup 定稿](https://github.com/Trojan0523/weekly_notes/blob/main/Personal.%E8%B0%88%E8%B0%88%20script%20setup%20%E5%AE%9A%E7%A8%BF.md)
+
+- 普通的 script setup `<script>setup ()</script>`
 
 
 
