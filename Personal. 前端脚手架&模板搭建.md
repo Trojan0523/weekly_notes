@@ -397,7 +397,7 @@
 
 > 抽离出这 tsx 一套范式的原因：hooks 抽离可以达到多端复用的效果，通过只替换 html 结构和样式达到不同端逻辑统一
 
-        1. 体验 tsx 在 vue 中的开发可以按照项目中 views/template 的格式进行开发，目录如下：
+        1. 体验 tsx 在 vue 中的开发可以按照项目中 views/template 的格式进行开发，目录如下: (Temp)
         
            1. ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-category.png?raw=true)
            2. ![](https://github.com/Trojan0523/weekly_notes/blob/main/image/tsx-template.png?raw=true)
