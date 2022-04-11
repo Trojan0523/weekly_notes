@@ -1,0 +1,32 @@
+{
+  "name": "weekly_notes",
+  "version": "1.0.0",
+  "description": "雄宇同学的前端精读Blog,读有益的文章,写有意义的博客",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trojan0523/weekly_notes.git"
+  },
+  "keywords": [
+    "Blog",
+    "FrontEnd"
+  ],
+  "author": "Trojan0523",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trojan0523/weekly_notes/issues"
+  },
+  "homepage": "https://github.com/Trojan0523/weekly_notes#readme",
+  "dependencies": {
+    "lint-md-cli": "^0.1.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "husky": "^7.0.4"
+  }
+}

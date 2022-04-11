@@ -1,0 +1,26 @@
+.DS_Store
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+tests/**/coverage/
+
+# Editor directories and files
+.idea
+.vscode/settings.json
+.env.local
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+/lib/create-audio/mp3/*
+/lib/env-config/patch.json
+
+# 测试覆盖率文件夹
+coverage/
+
+
+node_modules/

@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "-- start commit code lint checking -- "
+
+npx --no-install commitlint --edit $1
+
+echo "-- end commit code lint checking -- "
