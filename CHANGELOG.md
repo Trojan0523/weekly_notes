@@ -22,7 +22,7 @@
 * image upload ([fdccb8b](https://github.com/Trojan0523/weekly_notes/commit/fdccb8b15c4faf2a5203003c47cc14b111c0a2fd))
 * image upload ([32f64e0](https://github.com/Trojan0523/weekly_notes/commit/32f64e0d9aed10c1423e6348bd698980d4cc9cfe))
 * images upload ([18cd445](https://github.com/Trojan0523/weekly_notes/commit/18cd4457f3047203d7194ae13e87631257760c92))
-* rxjs精读 ([97ff17c](https://github.com/Trojan0523/weekly_notes/commit/97ff17c259458e67ef69c4afa88882ca57a2d258))
+* rxjs 精读 ([97ff17c](https://github.com/Trojan0523/weekly_notes/commit/97ff17c259458e67ef69c4afa88882ca57a2d258))
 * summary in 2021 ([9edc7f8](https://github.com/Trojan0523/weekly_notes/commit/9edc7f826037f306c9c493399d74e793b94eecfd))
 * 精读增强现实在前端的强化 ([f84039f](https://github.com/Trojan0523/weekly_notes/commit/f84039f2e86bd5da4709ad0df05d1a7ab0ad9e30))
 
