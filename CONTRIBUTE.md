@@ -1,4 +1,4 @@
-### Recommended workflow
+# Recommended workflow
 
 ## commit Description Rule
 
@@ -11,11 +11,12 @@
 | 优化某一模块         | perf:优化的描述      |
 
 ## WorkFlow make
+
 1. Make changes
 2. Commit those changes
 3. Make sure Travis turns green
 4. Bump version in package.json
 5. conventionalChangelog
-6. Commit package.json and CHANGELOG.md files 
-7. Tag (those Tags tagging can use auto-task completing and command line to do) (git tag -a v1.0.x -m "my version 1.4") 
+6. Commit package.json and CHANGELOG.md files
+7. Tag (those Tags tagging can use auto-task completing and command line to do) (git tag -a v1.0.x -m "my version 1.4")
 8. Push
