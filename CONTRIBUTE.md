@@ -20,3 +20,4 @@
 6. Commit package.json and CHANGELOG.md files
 7. Tag (those Tags tagging can use auto-task completing and command line to do) (git tag -a v1.0.x -m "my version 1.4")
 8. Push
+9. git push origin <tag_name>

@@ -7,3 +7,6 @@
 - 精读仓库(dt-fe/weekly) 感谢 @ascoders(黄子毅) 以及 其他在 weekly 上提交过 issues 的大佬，没有各位大佬的提交讨论就没有这么多有趣的文章阅读
 
 - [weekly 前端周刊](https://github.com/dt-fe/weekly)
+
+- TODO
+- 1. 去除 lint-md 对 CHANGELOG.md 的检测
