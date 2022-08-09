@@ -1,6 +1,6 @@
 {
   "name": "weekly_notes",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "雄宇同学的前端精读Blog,读有益的文章,写有意义的博客",
   "main": "index.js",
   "scripts": {
