@@ -23,7 +23,9 @@
 ![accept()](https://github.com/Trojan0523/weekly_notes/blob/main/image/accept().png?raw=true)
 
 - 允许 HMR 更新当前模块
+
 - 已更新模块实例执行 accept handler
+
 - 用`Function.prototype.apply(this)` 给当前应用的模块实例做新模块的导入，当前模块能在运行时应用中进行更新
 
 - 重要区别：ESM-HMR 从不给用户替换允许的模块，相反，当前模块其实会在 accept() 回调中提供了一个已更新的模块实例，这一变更也取决于 `accept()` 回调能否给与当前应用中的当前模块的更新。
@@ -49,6 +51,7 @@
 - ![accept(deps, handler)](https://github.com/Trojan0523/weekly_notes/blob/main/image/accept(deps,%20handler).png?raw=true)
 
 - 部分情景下，自身依赖没有引用的时候，大概率不会更新一个已经存在的模块，如果能传一个依赖导入标识符数组给到`accept`回调, 这些模块在回调中能通过依赖属性赋予有效状态，反之，`deps`属性应该为空。
+
 - 用例：需要一个方法给依赖打引用标，更新当前模块
 
 ## `dispose(callback: () => void)`
