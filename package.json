@@ -33,6 +33,6 @@
     "husky": "^7.0.4"
   },
   "lint-staged": {
-    "*.md": "lint-md ./"
+    "*.md": "pnpm run lint"
   }
 }
