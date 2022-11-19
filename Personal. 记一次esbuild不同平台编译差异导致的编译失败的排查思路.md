@@ -14,9 +14,9 @@
   
   - 第一次发版失败到第二次发版失败期间，服务端同学提醒测试环境没有改版后的代码，第一时间条件反射到测试环境测试究竟是代码写的不对还是代码没有发上线。
   
-  - 使用同一页面本地和测试环境交互体验做对比，可能是代码没有发上线，于是才上去jenkins查看代码是否上线 (由于封板后需求不着急上，所以也没有去看上一次发版是否成功，隔了几分钟就在15号当天告诉服务端同学能测试了，自己要检讨一下) 
+  - 使用同一页面本地和测试环境交互体验做对比，可能是代码没有发上线，于是才上去 jenkins 查看代码是否上线 (由于封板后需求不着急上，所以也没有去看上一次发版是否成功，隔了几分钟就在 15 号当天告诉服务端同学能测试了，自己要检讨一下) 
   
-  - 15号当天的代码没有发版成功，觉得可能是jenkins抽风了，没发成功。于是18号第二次发版就再点了一次发版按钮，没有去看构建时报错信息
+  - 15 号当天的代码没有发版成功，觉得可能是 jenkins 抽风了，没发成功。于是 18 号第二次发版就再点了一次发版按钮，没有去看构建时报错信息
   
   - 第二次还是发版失败，就很奇怪了，发的版本没有修改过任何配置信息，这时候才去看看具体的报错信息
   
@@ -28,7 +28,7 @@
   
   - 不出意外，搜不到精准的报错信息，浪费了点时间~~
   
-  - 然后用本地在用的node版本` v14.6.0` 跑了一次编译build，成功了~~
+  - 然后用本地在用的node版本`v14.6.0` 跑了一次编译build，成功了~~
   
   - ![](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/terminal-output-success.png) 
   
@@ -44,13 +44,13 @@
   
   - 在此时间段之前，也进行了小版本的依赖锁定，不断地去看是否是小版本依赖升级导致的编译失败问题 (存疑：记录写下时仍不能确定，因为两周前的版本是没有任何问题的)
   
-  - 次日10.17，继续发了一版，然后找报错信息，`Console Output` 中找到了整个编译构建流水线的日志，确认代码分支修改失败后，发现可以进行回放，于是在回放中直接修改 `Push Docker Image` 构建指令，并重新执行构建操作:
+  - 次日 10.17，继续发了一版，然后找报错信息，`Console Output` 中找到了整个编译构建流水线的日志，确认代码分支修改失败后，发现可以进行回放，于是在回放中直接修改 `Push Docker Image` 构建指令，并重新执行构建操作:
   
   - ![](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/jenkins-replay.png)
   
   - ![](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/jenkins-node-version.png)
   
-  - 这次构建把对应的node版本号进行输出，发现与本地Node版本`v14.6.0`和 docker Node版本 `v14.16.0` 和 jenkins Node版本 `v14.15.4`  存在差异，于是在本地通过`nvm install v14.15.4 ` 将node本地版本与Jenkins node版本对齐, 然后再进行编译。编译不过，但不是同样的报错信息。
+  - 这次构建把对应的node版本号进行输出，发现与本地Node版本`v14.6.0`和 docker Node版本 `v14.16.0` 和 jenkins Node版本 `v14.15.4`  存在差异，于是在本地通过`nvm install v14.15.4` 将node本地版本与Jenkins node版本对齐, 然后再进行编译。编译不过，但不是同样的报错信息。
   
   - ![](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/terminal-error-output.png)
     
@@ -64,7 +64,7 @@
   
   - ![](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/vite-issue.png)
   
-  - vite团队的老哥给出了部分的解释，解决的方法是要确保对应容器依赖安装正确(虽然是废话，但是也指向了可能是darwin-64和linux-64平台系统差异的问题) 
+  - vite 团队的老哥给出了部分的解释，解决的方法是要确保对应容器依赖安装正确(虽然是废话，但是也指向了可能是 darwin-64 和 linux-64 平台系统差异的问题) 
     
     > 记录下 M1 Pro 的系统环境 {"os":"darwin","arch":"arm64"}
   
