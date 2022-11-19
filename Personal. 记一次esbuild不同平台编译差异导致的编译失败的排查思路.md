@@ -18,7 +18,7 @@
   
   - 第二次还是发版失败，就很奇怪了，发的版本没有修改过任何配置信息，这时候才去看看具体的报错信息
   
-  - ![](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/jenkins-output-failed-1.png)
+  - ![](https://raw.githubusercontent.com/Trojan0523/weekly_notes/main/image/jenkins-output-failed-2.png)
   
   - 突然的发版失败还是先不麻烦运维大哥去看问题了，于是看到这个Error的信息，就google了一下具体的报错信息，`type Cannot find module 'node:module' in vite config`
   
