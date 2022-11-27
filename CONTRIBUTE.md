@@ -15,8 +15,8 @@
 1. Make changes
 2. Commit those changes
 3. Make sure Travis turns green
-4. Bump version in package.json
-5. conventionalChangelog
+4. Bump version in package.json (TODO: using bumpp)
+5. conventionalChangelog (just need to execute `pnpm run version` as well as below)
 6. Commit package.json and CHANGELOG.md files
 7. Tag (those Tags tagging can use auto-task completing and command line to do) (git tag -a v1.0.x -m "my version 1.4")
 8. Push
